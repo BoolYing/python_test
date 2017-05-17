@@ -13,8 +13,8 @@ if DEBUG:
     dbport = '3306'
 else:
     dbuser = 'root'
-    dbpass = 'lihuipeng'
-    dbname = 'game_main'
+    dbpass = '123456'
+    dbname = 'bs_db'
     dbhost = '127.0.0.1'
     dbport = '3306'
      
