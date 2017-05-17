@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for heartsong project
+# Scrapy settings for Douban project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,17 +9,18 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'heartsong'
+BOT_NAME = 'Douban'
 
-SPIDER_MODULES = ['heartsong.spiders']
-NEWSPIDER_MODULE = 'heartsong.spiders'
-
+SPIDER_MODULES = ['Douban.spiders']
+NEWSPIDER_MODULE = 'Douban.spiders'
+HTTPERROR_ALLOWED_CODES = [200]
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'heartsong (+http://www.yourdomain.com)'
+#USER_AGENT = 'Douban (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -47,13 +48,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'heartsong.middlewares.HeartsongSpiderMiddleware': 543,
+#    'Douban.middlewares.DoubanSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'heartsong.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'Douban.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,9 +65,9 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-    'heartsong.pipelines.HeartsongPipeline': 300,
-}
+#ITEM_PIPELINES = {
+#    'Douban.pipelines.DoubanPipeline': 300,
+#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -88,12 +89,3 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-# start MySQL database configure setting
-MYSQL_HOST = 'localhost'
-MYSQL_USER = 'root'
-MYSQL_PASSWD = '123456'
-MYSQL_PORT = '3306'
-MYSQL_DB = 'Spider'
-
-# end of MySQL database configure setting

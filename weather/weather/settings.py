@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for heartsong project
+# Scrapy settings for weather project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,17 +9,17 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'heartsong'
+BOT_NAME = 'weather'
 
-SPIDER_MODULES = ['heartsong.spiders']
-NEWSPIDER_MODULE = 'heartsong.spiders'
+SPIDER_MODULES = ['weather.spiders']
+NEWSPIDER_MODULE = 'weather.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'heartsong (+http://www.yourdomain.com)'
+#USER_AGENT = 'weather (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'heartsong.middlewares.HeartsongSpiderMiddleware': 543,
+#    'weather.middlewares.WeatherSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'heartsong.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'weather.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,8 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'heartsong.pipelines.HeartsongPipeline': 300,
+    #'weather.pipelines.WeatherPipeline': 300,
+	'weather.pipelines.MySQLStorePipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -88,12 +89,3 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-# start MySQL database configure setting
-MYSQL_HOST = 'localhost'
-MYSQL_USER = 'root'
-MYSQL_PASSWD = '123456'
-MYSQL_PORT = '3306'
-MYSQL_DB = 'Spider'
-
-# end of MySQL database configure setting

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for heartsong project
+# Scrapy settings for jiandan project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,17 +9,17 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'heartsong'
+BOT_NAME = 'jiandan'
 
-SPIDER_MODULES = ['heartsong.spiders']
-NEWSPIDER_MODULE = 'heartsong.spiders'
+SPIDER_MODULES = ['jiandan.spiders']
+NEWSPIDER_MODULE = 'jiandan.spiders'
 
-
+IMAGES_STORE='/home/by/python_test/jiandan/photo'  
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'heartsong (+http://www.yourdomain.com)'
+#USER_AGENT = 'jiandan (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -27,7 +27,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'heartsong.middlewares.HeartsongSpiderMiddleware': 543,
+#    'jiandan.middlewares.JiandanSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'heartsong.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'jiandan.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'heartsong.pipelines.HeartsongPipeline': 300,
+    'jiandan.pipelines.JiandanPipeline': 1,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -88,12 +88,3 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-# start MySQL database configure setting
-MYSQL_HOST = 'localhost'
-MYSQL_USER = 'root'
-MYSQL_PASSWD = '123456'
-MYSQL_PORT = '3306'
-MYSQL_DB = 'Spider'
-
-# end of MySQL database configure setting
