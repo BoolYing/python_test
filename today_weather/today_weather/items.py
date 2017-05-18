@@ -11,5 +11,5 @@ import scrapy
 class TodayWeatherItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-	content  = scrapy.Field()
-	
+	content   = scrapy.Field()
+    #city_code = scrapy.Field()	

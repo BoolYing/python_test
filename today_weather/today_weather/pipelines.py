@@ -15,7 +15,7 @@ else:
     dbuser = 'root'
     dbpass = '123456'
     dbname = 'bs_db'
-    dbhost = '127.0.0.1'
+    dbhost = '192.168.1.101'
     dbport = '3306'
      
 class MySQLStorePipeline(object):
@@ -23,7 +23,7 @@ class MySQLStorePipeline(object):
         self.conn = MySQLdb.connect(user=dbuser, passwd=dbpass, db=dbname, host=dbhost, charset="utf8", use_unicode=True)
         self.cursor = self.conn.cursor()
         #清空表：
-        self.cursor.execute("truncate table a101280101;")
+        #self.cursor.execute("truncate table a101280101;")
         self.conn.commit() 
          
     def process_item(self, item, spider):
@@ -35,8 +35,8 @@ class MySQLStorePipeline(object):
                                 item['content'].split(',')[0],
                                 item['content'].split(',')[2],
                                 item['content'].split(',')[3],
-                                item['content'].split(',')[5],
-                                item['content'].split(',')[6],
+                                item['content'].split(',')[4],
+                                item['content'].split(',')[5], #五和六
                                 curTime,
                             )
             )
