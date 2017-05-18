@@ -23,15 +23,16 @@ class MySQLStorePipeline(object):
         self.conn = MySQLdb.connect(user=dbuser, passwd=dbpass, db=dbname, host=dbhost, charset="utf8", use_unicode=True)
         self.cursor = self.conn.cursor()
         #清空表：
-        self.cursor.execute("truncate table b101280101;")
+        self.cursor.execute("truncate table weather7day;")
         self.conn.commit() 
          
     def process_item(self, item, spider): 
         curTime =  datetime.datetime.now()  
         try:
-            self.cursor.execute("""INSERT INTO b101280101 (weatherDate1,weatherDate2, weatherWea, weatherTem1,weatherTem2, weatherWin, updateTime)  
+            self.cursor.execute("""INSERT INTO weather7day (city_code,weatherDate1,weatherDate2, weatherWea, weatherTem1,weatherTem2, weatherWin, updateTime)  
                             VALUES (%s, %s, %s, %s, %s, %s, %s)""", 
                             (
+                                item['city_code'],
                                 item['weatherDate'][0].encode('utf-8')[:-15],
                                 item['weatherDate'][0].encode('utf-8')[-9:-3],
                                 item['weatherWea'][0].encode('utf-8'),

@@ -44,20 +44,30 @@ class CatchWeatherSpider(scrapy.Spider):
     start_urls = get_urls()
 
     def parse(self, response):
-        #print('test--start_urls %s:' % start_urls)
         sel=Selector(response)
+
+        #调试
         sites=sel.xpath('//*[@id="today"]/script/text()').extract() 
         print('test--1:%s' % sites)
-        item = TodayWeatherItem()
-        contents = sel.xpath('//*[@id="today"]/script/text()').extract()
-        contents = contents[0].encode('utf-8')
-        item_list = re.findall(r'"(.*?)"', contents)
-        i = item_list.index("7d")
-        for x in item_list[i+1:]:
+
+        #从网页源码中获取城市代码，用来分辨天气记录是属于哪一个城市的
+        city_code_path = sel.xpath('//*[@id="someDayNav"]/li[1]/a/@href').extract()
+        city_code_path = city_code_path[0].encode('utf-8')
+        #city_code_path 的形式是："/weather1d/101110102.shtml"，需要用正则表达式提取city_code
+        city_code = re.findall(r'/weather1d/(.+?).shtml',city_code_path)[0]
+
+        #获取网页script节点中存储的全部内容
+        contents  = sel.xpath('//*[@id="today"]/script/text()').extract() 
+        contents  = contents[0].encode('utf-8')
+        content_list = re.findall(r'"(.*?)"', contents)
+        i = content_list.index("7d")
+        
+        for x in content_list[i+1:]:
             item = TodayWeatherItem()
-            item["content"] = x
+            item["content"]   = x
+            item["city_code"] = city_code
             #这条可以在运行结果上看到每一条记录的实际内容(而不是utf-8码)
-            print(x) 
+            print("%s:%s" % (city_code,x)) 
             yield item
 
 

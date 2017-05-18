@@ -13,6 +13,7 @@ class WeatherItem(scrapy.Item):
     # name = scrapy.Field()
 	# define the fields for your item here like:
     # name = scrapy.Field()
+    city_code = scrapy.Field()
     weatherDate = scrapy.Field()
     weatherWea = scrapy.Field()
     weatherTem1 = scrapy.Field()
