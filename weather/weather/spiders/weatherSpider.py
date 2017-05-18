@@ -32,7 +32,7 @@ def get_urls():
         result=list(results)
         for r in result:
             #将数据库中的城市代码列表，构建成url列表的形式，并返回url列表
-            s.append(("http://www.weather.com.cn/weather1d/%s.shtml" % r))
+            s.append(("http://www.weather.com.cn/weather/%s.shtml" % r))
         conn.close()
         return s
     except MySQLdb.Error,e:
@@ -40,13 +40,13 @@ def get_urls():
 
  
 class CatchWeatherSpider(scrapy.Spider):
-    name = 'CatchWeather'
+    name = 'weather'
     allowed_domains = ['weather.com.cn']
     #start_urls = [ "http://www.weather.com.cn/weather/101280101.shtml" ]
     start_urls = get_urls()
      
     def parse(self, response):
-
+        sel=Selector(response)
         #从网页源码中获取城市代码，用来分辨天气记录是属于哪一个城市的
         city_code_path = sel.xpath('//*[@id="someDayNav"]/li[1]/a/@href').extract()
         city_code_path = city_code_path[0].encode('utf-8')

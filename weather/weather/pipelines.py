@@ -30,7 +30,7 @@ class MySQLStorePipeline(object):
         curTime =  datetime.datetime.now()  
         try:
             self.cursor.execute("""INSERT INTO weather7day (city_code,weatherDate1,weatherDate2, weatherWea, weatherTem1,weatherTem2, weatherWin, updateTime)  
-                            VALUES (%s, %s, %s, %s, %s, %s, %s)""", 
+                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)""", 
                             (
                                 item['city_code'],
                                 item['weatherDate'][0].encode('utf-8')[:-15],
