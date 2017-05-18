@@ -3,21 +3,9 @@
 import MySQLdb
 import datetime
 import re
-DEBUG = True
- 
-if DEBUG:
-    dbuser = 'root'
-    dbpass = '123456'
-    dbname = 'bs_db'
-    dbhost = '127.0.0.1'
-    dbport = '3306'
-else:
-    dbuser = 'root'
-    dbpass = '123456'
-    dbname = 'bs_db'
-    dbhost = '192.168.1.101'
-    dbport = '3306'
-     
+from settings import dbuser,dbpass,dbname,dbhost,dbport
+
+
 class MySQLStorePipeline(object):
     def __init__(self):
         self.conn = MySQLdb.connect(user=dbuser, passwd=dbpass, db=dbname, host=dbhost, charset="utf8", use_unicode=True)

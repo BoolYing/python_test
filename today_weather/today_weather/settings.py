@@ -14,6 +14,21 @@ BOT_NAME = 'today_weather'
 SPIDER_MODULES = ['today_weather.spiders']
 NEWSPIDER_MODULE = 'today_weather.spiders'
 
+DEBUG = True
+
+if DEBUG:
+    dbuser = 'root'
+    dbpass = '123456'
+    dbname = 'bs_db'
+    dbhost = '127.0.0.1'
+    dbport = '3306'
+else:
+    dbuser = 'root'
+    dbpass = '123456'
+    dbname = 'bs_db'
+    dbhost = '192.168.1.101'
+    dbport = '3306'
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'today_weather (+http://www.yourdomain.com)'

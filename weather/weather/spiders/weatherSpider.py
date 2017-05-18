@@ -5,22 +5,8 @@ import re
 from scrapy.selector import Selector
 import urllib2,time
 import MySQLdb
+from ..settings import dbuser,dbpass,dbname,dbhost,dbport
 
-
-DEBUG = True
-
-if DEBUG:
-    dbuser = 'root'
-    dbpass = '123456'
-    dbname = 'bs_db'
-    dbhost = '127.0.0.1'
-    dbport = '3306'
-else:
-    dbuser = 'root'
-    dbpass = '123456'
-    dbname = 'bs_db'
-    dbhost = '192.168.1.101'
-    dbport = '3306'
 
 def get_urls():
     try:
