@@ -35,7 +35,8 @@ while 1:
     result = list(results)
     reply = []
     for r in result:
-        reply.append((r.)
+        
+        
         
 
 
