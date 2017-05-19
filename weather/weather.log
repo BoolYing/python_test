@@ -1,0 +1,271 @@
+2017-05-19 22:00:02 [scrapy.utils.log] INFO: Scrapy 1.3.3 started (bot: weather)
+2017-05-19 22:00:02 [scrapy.utils.log] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'weather.spiders', 'SPIDER_MODULES': ['weather.spiders'], 'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'weather'}
+2017-05-19 22:00:02 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2017-05-19 22:00:02 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-05-19 22:00:02 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-05-19 22:00:02 [scrapy.middleware] INFO: Enabled item pipelines:
+['weather.pipelines.MySQLStorePipeline']
+2017-05-19 22:00:02 [scrapy.core.engine] INFO: Spider opened
+2017-05-19 22:00:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-05-19 22:00:02 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-05-19 22:00:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/robots.txt> (referer: None)
+2017-05-19 22:00:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather/101110101.shtml> (referer: None)
+2017-05-19 22:00:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather/101110103.shtml> (referer: None)
+2017-05-19 22:00:02 [scrapy.core.scraper] ERROR: Error processing {'city_code': '101110101',
+ 'weatherDate': [u'19\u65e5\uff08\u4eca\u5929\uff09'],
+ 'weatherTem1': [],
+ 'weatherTem2': [u'21\u2103'],
+ 'weatherWea': [u'\u591a\u4e91'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Twisted-17.1.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/by/python_test/weather/weather/pipelines.py", line 26, in process_item
+    item['weatherTem1'][0].encode('utf-8'),
+IndexError: list index out of range
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110101.shtml>
+{'city_code': '101110101',
+ 'weatherDate': [u'20\u65e5\uff08\u660e\u5929\uff09'],
+ 'weatherTem1': [u'31\u2103'],
+ 'weatherTem2': [u'21\u2103'],
+ 'weatherWea': [u'\u9634'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110101.shtml>
+{'city_code': '101110101',
+ 'weatherDate': [u'21\u65e5\uff08\u540e\u5929\uff09'],
+ 'weatherTem1': [u'28\u2103'],
+ 'weatherTem2': [u'17\u2103'],
+ 'weatherWea': [u'\u9635\u96e8\u8f6c\u4e2d\u96e8'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] ERROR: Error processing {'city_code': '101110103',
+ 'weatherDate': [u'19\u65e5\uff08\u4eca\u5929\uff09'],
+ 'weatherTem1': [],
+ 'weatherTem2': [u'18\u2103'],
+ 'weatherWea': [u'\u591a\u4e91'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Twisted-17.1.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/by/python_test/weather/weather/pipelines.py", line 26, in process_item
+    item['weatherTem1'][0].encode('utf-8'),
+IndexError: list index out of range
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110101.shtml>
+{'city_code': '101110101',
+ 'weatherDate': [u'22\u65e5\uff08\u5468\u4e00\uff09'],
+ 'weatherTem1': [u'25\u2103'],
+ 'weatherTem2': [u'13\u2103'],
+ 'weatherWea': [u'\u5c0f\u96e8\u8f6c\u591a\u4e91'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110101.shtml>
+{'city_code': '101110101',
+ 'weatherDate': [u'23\u65e5\uff08\u5468\u4e8c\uff09'],
+ 'weatherTem1': [u'30\u2103'],
+ 'weatherTem2': [u'14\u2103'],
+ 'weatherWea': [u'\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110101.shtml>
+{'city_code': '101110101',
+ 'weatherDate': [u'24\u65e5\uff08\u5468\u4e09\uff09'],
+ 'weatherTem1': [u'31\u2103'],
+ 'weatherTem2': [u'17\u2103'],
+ 'weatherWea': [u'\u591a\u4e91\u8f6c\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110103.shtml>
+{'city_code': '101110103',
+ 'weatherDate': [u'20\u65e5\uff08\u660e\u5929\uff09'],
+ 'weatherTem1': [u'31\u2103'],
+ 'weatherTem2': [u'21\u2103'],
+ 'weatherWea': [u'\u9634\u8f6c\u591a\u4e91'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110103.shtml>
+{'city_code': '101110103',
+ 'weatherDate': [u'21\u65e5\uff08\u540e\u5929\uff09'],
+ 'weatherTem1': [u'28\u2103'],
+ 'weatherTem2': [u'17\u2103'],
+ 'weatherWea': [u'\u5c0f\u96e8\u8f6c\u4e2d\u96e8'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110101.shtml>
+{'city_code': '101110101',
+ 'weatherDate': [u'25\u65e5\uff08\u5468\u56db\uff09'],
+ 'weatherTem1': [u'30\u2103'],
+ 'weatherTem2': [u'16\u2103'],
+ 'weatherWea': [u'\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110103.shtml>
+{'city_code': '101110103',
+ 'weatherDate': [u'22\u65e5\uff08\u5468\u4e00\uff09'],
+ 'weatherTem1': [u'25\u2103'],
+ 'weatherTem2': [u'13\u2103'],
+ 'weatherWea': [u'\u5c0f\u96e8\u8f6c\u591a\u4e91'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110103.shtml>
+{'city_code': '101110103',
+ 'weatherDate': [u'23\u65e5\uff08\u5468\u4e8c\uff09'],
+ 'weatherTem1': [u'27\u2103'],
+ 'weatherTem2': [u'14\u2103'],
+ 'weatherWea': [u'\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110103.shtml>
+{'city_code': '101110103',
+ 'weatherDate': [u'24\u65e5\uff08\u5468\u4e09\uff09'],
+ 'weatherTem1': [u'31\u2103'],
+ 'weatherTem2': [u'13\u2103'],
+ 'weatherWea': [u'\u591a\u4e91\u8f6c\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110103.shtml>
+{'city_code': '101110103',
+ 'weatherDate': [u'25\u65e5\uff08\u5468\u56db\uff09'],
+ 'weatherTem1': [u'30\u2103'],
+ 'weatherTem2': [u'16\u2103'],
+ 'weatherWea': [u'\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather/101110113.shtml> (referer: None)
+2017-05-19 22:00:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather/101110102.shtml> (referer: None)
+2017-05-19 22:00:02 [scrapy.core.scraper] ERROR: Error processing {'city_code': '101110113',
+ 'weatherDate': [u'19\u65e5\uff08\u4eca\u5929\uff09'],
+ 'weatherTem1': [],
+ 'weatherTem2': [u'21\u2103'],
+ 'weatherWea': [u'\u591a\u4e91'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Twisted-17.1.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/by/python_test/weather/weather/pipelines.py", line 26, in process_item
+    item['weatherTem1'][0].encode('utf-8'),
+IndexError: list index out of range
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110113.shtml>
+{'city_code': '101110113',
+ 'weatherDate': [u'20\u65e5\uff08\u660e\u5929\uff09'],
+ 'weatherTem1': [u'31\u2103'],
+ 'weatherTem2': [u'21\u2103'],
+ 'weatherWea': [u'\u9634'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110113.shtml>
+{'city_code': '101110113',
+ 'weatherDate': [u'21\u65e5\uff08\u540e\u5929\uff09'],
+ 'weatherTem1': [u'28\u2103'],
+ 'weatherTem2': [u'17\u2103'],
+ 'weatherWea': [u'\u9635\u96e8\u8f6c\u4e2d\u96e8'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:02 [scrapy.core.scraper] ERROR: Error processing {'city_code': '101110102',
+ 'weatherDate': [u'19\u65e5\uff08\u4eca\u5929\uff09'],
+ 'weatherTem1': [],
+ 'weatherTem2': [u'18\u2103'],
+ 'weatherWea': [u'\u591a\u4e91'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Twisted-17.1.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/by/python_test/weather/weather/pipelines.py", line 26, in process_item
+    item['weatherTem1'][0].encode('utf-8'),
+IndexError: list index out of range
+2017-05-19 22:00:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110113.shtml>
+{'city_code': '101110113',
+ 'weatherDate': [u'22\u65e5\uff08\u5468\u4e00\uff09'],
+ 'weatherTem1': [u'25\u2103'],
+ 'weatherTem2': [u'13\u2103'],
+ 'weatherWea': [u'\u5c0f\u96e8\u8f6c\u591a\u4e91'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:03 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110113.shtml>
+{'city_code': '101110113',
+ 'weatherDate': [u'23\u65e5\uff08\u5468\u4e8c\uff09'],
+ 'weatherTem1': [u'30\u2103'],
+ 'weatherTem2': [u'14\u2103'],
+ 'weatherWea': [u'\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:03 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110102.shtml>
+{'city_code': '101110102',
+ 'weatherDate': [u'20\u65e5\uff08\u660e\u5929\uff09'],
+ 'weatherTem1': [u'31\u2103'],
+ 'weatherTem2': [u'19\u2103'],
+ 'weatherWea': [u'\u5c0f\u96e8\u8f6c\u9634'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:03 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110102.shtml>
+{'city_code': '101110102',
+ 'weatherDate': [u'21\u65e5\uff08\u540e\u5929\uff09'],
+ 'weatherTem1': [u'26\u2103'],
+ 'weatherTem2': [u'17\u2103'],
+ 'weatherWea': [u'\u9635\u96e8\u8f6c\u4e2d\u96e8'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:03 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110113.shtml>
+{'city_code': '101110113',
+ 'weatherDate': [u'24\u65e5\uff08\u5468\u4e09\uff09'],
+ 'weatherTem1': [u'31\u2103'],
+ 'weatherTem2': [u'17\u2103'],
+ 'weatherWea': [u'\u591a\u4e91\u8f6c\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:03 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110113.shtml>
+{'city_code': '101110113',
+ 'weatherDate': [u'25\u65e5\uff08\u5468\u56db\uff09'],
+ 'weatherTem1': [u'30\u2103'],
+ 'weatherTem2': [u'16\u2103'],
+ 'weatherWea': [u'\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:03 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110102.shtml>
+{'city_code': '101110102',
+ 'weatherDate': [u'22\u65e5\uff08\u5468\u4e00\uff09'],
+ 'weatherTem1': [u'25\u2103'],
+ 'weatherTem2': [u'12\u2103'],
+ 'weatherWea': [u'\u5c0f\u96e8\u8f6c\u591a\u4e91'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:03 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110102.shtml>
+{'city_code': '101110102',
+ 'weatherDate': [u'23\u65e5\uff08\u5468\u4e8c\uff09'],
+ 'weatherTem1': [u'28\u2103'],
+ 'weatherTem2': [u'14\u2103'],
+ 'weatherWea': [u'\u6674\u8f6c\u591a\u4e91'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:03 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110102.shtml>
+{'city_code': '101110102',
+ 'weatherDate': [u'24\u65e5\uff08\u5468\u4e09\uff09'],
+ 'weatherTem1': [u'31\u2103'],
+ 'weatherTem2': [u'13\u2103'],
+ 'weatherWea': [u'\u591a\u4e91\u8f6c\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:03 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather/101110102.shtml>
+{'city_code': '101110102',
+ 'weatherDate': [u'25\u65e5\uff08\u5468\u56db\uff09'],
+ 'weatherTem1': [u'30\u2103'],
+ 'weatherTem2': [u'16\u2103'],
+ 'weatherWea': [u'\u6674'],
+ 'weatherWin': [u'\u5fae\u98ce']}
+2017-05-19 22:00:03 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-05-19 22:00:03 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1182,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 86113,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 5, 19, 14, 0, 3, 92385),
+ 'item_scraped_count': 24,
+ 'log_count/DEBUG': 30,
+ 'log_count/ERROR': 4,
+ 'log_count/INFO': 7,
+ 'response_received_count': 5,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2017, 5, 19, 14, 0, 2, 206862)}
+2017-05-19 22:00:03 [scrapy.core.engine] INFO: Spider closed (finished)

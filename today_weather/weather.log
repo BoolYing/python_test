@@ -1,10 +1,10 @@
-2017-05-19 21:10:01 [scrapy.utils.log] INFO: Scrapy 1.3.3 started (bot: today_weather)
-2017-05-19 21:10:01 [scrapy.utils.log] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'today_weather.spiders', 'SPIDER_MODULES': ['today_weather.spiders'], 'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'today_weather'}
-2017-05-19 21:10:01 [scrapy.middleware] INFO: Enabled extensions:
+2017-05-19 22:40:01 [scrapy.utils.log] INFO: Scrapy 1.3.3 started (bot: today_weather)
+2017-05-19 22:40:01 [scrapy.utils.log] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'today_weather.spiders', 'SPIDER_MODULES': ['today_weather.spiders'], 'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'today_weather'}
+2017-05-19 22:40:01 [scrapy.middleware] INFO: Enabled extensions:
 ['scrapy.extensions.logstats.LogStats',
  'scrapy.extensions.telnet.TelnetConsole',
  'scrapy.extensions.corestats.CoreStats']
-2017-05-19 21:10:01 [scrapy.middleware] INFO: Enabled downloader middlewares:
+2017-05-19 22:40:01 [scrapy.middleware] INFO: Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
@@ -16,117 +16,318 @@
  'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
  'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2017-05-19 21:10:01 [scrapy.middleware] INFO: Enabled spider middlewares:
+2017-05-19 22:40:01 [scrapy.middleware] INFO: Enabled spider middlewares:
 ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
  'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
  'scrapy.spidermiddlewares.referer.RefererMiddleware',
  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
  'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2017-05-19 21:10:01 [scrapy.middleware] INFO: Enabled item pipelines:
+2017-05-19 22:40:01 [scrapy.middleware] INFO: Enabled item pipelines:
 ['today_weather.pipelines.MySQLStorePipeline']
-2017-05-19 21:10:01 [scrapy.core.engine] INFO: Spider opened
-2017-05-19 21:10:01 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2017-05-19 21:10:01 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
-2017-05-19 21:10:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/robots.txt> (referer: None)
-2017-05-19 21:10:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather1d/101110113.shtml> (referer: None)
-2017-05-19 21:10:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather1d/101110102.shtml> (referer: None)
-2017-05-19 21:10:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather1d/101110101.shtml> (referer: None)
-test--1:[u'\nvar hour3data={"1d":["19\u65e520\u65f6,n00,\u6674,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],"23d":[["20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d02,\u9634,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]],"7d":[["19\u65e520\u65f6,n00,\u6674,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d02,\u9634,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["22\u65e508\u65f6,d08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e511\u65f6,d07,\u5c0f\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e514\u65f6,d07,\u5c0f\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e517\u65f6,d07,\u5c0f\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e520\u65f6,n07,\u5c0f\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e502\u65f6,n01,\u591a\u4e91,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["23\u65e508\u65f6,d01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e514\u65f6,d00,\u6674,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e520\u2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+2017-05-19 22:40:01 [scrapy.core.engine] INFO: Spider opened
+2017-05-19 22:40:01 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-05-19 22:40:01 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-05-19 22:40:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/robots.txt> (referer: None)
+2017-05-19 22:40:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather1d/101110102.shtml> (referer: None)
+2017-05-19 22:40:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather1d/101110113.shtml> (referer: None)
+test--1:[u'\nvar hour3data={"1d":["19\u65e520\u65f6,n00,\u6674,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d07,\u5c0f\u96e8,27\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],"23d":[["20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d07,\u5c0f\u96e8,27\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n02,\u9634,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n03,\u9635\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]],"7d":[["19\u65e520\u65f6,n00,\u6674,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d07,\u5c0f\u96e8,27\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n02,\u9634,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n03,\u9635\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["22\u65e508\u65f6,d08,\u4e2d\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e511\u65f6,d07,\u5c0f\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e514\u65f6,d07,\u5c0f\u96e8,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e517\u65f6,d08,\u4e2d\u96e8,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e520\u65f6,n07,\u5c0f\u96e8,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e502\u65f6,n01,\u591a\u4e91,14\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["23\u65e508\u65f6,d01,\u591a\u4e91,17\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e514\u65f6,d00,\u6674,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u652017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '19\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '19\xe6\x97\xa523\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '20\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '20\xe6\x97\xa505\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '20\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '20\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,27\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '20\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '20\xe6\x97\xa517\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '20\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '20\xe6\x97\xa523\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '21\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '21\xe6\x97\xa505\xe6\x97\xb6,n02,\xe9\x98\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '21\xe6\x97\xa508\xe6\x97\xb6,d02,\xe9\x98\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '21\xe6\x97\xa511\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '21\xe6\x97\xa514\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '21\xe6\x97\xa517\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '21\xe6\x97\xa520\xe6\x97\xb6,n03,\xe9\x98\xb5\xe9\x9b\xa8,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '21\xe6\x97\xa523\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '22\xe6\x97\xa502\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '22\xe6\x97\xa505\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+e520\u65f6,n00,\u6674,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e502\u65f6,n01,\u591a\u4e91,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["24\u65e508\u65f6,d01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e514\u65f6,d01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e520\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e502\u65f6,n01,\u591a\u4e91,14\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["25\u65e508\u65f6,d00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e514\u65f6,d01,\u591a\u4e91,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e520\u65f6,n00,\u6674,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e502\u65f6,n00,\u6674,16\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["26\u65e508\u65f6,d00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e514\u65f6,d00,\u6674,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e520\u65f6,n00,\u6674,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]]}\n']
+101110102:19日20时,n00,晴,23℃,东北风,微风
+101110102:19日23时,n00,晴,20℃,东北风,微风
+101110102:20日02时,n01,多云,19℃,东北风,微风
+101110102:20日05时,n01,多云,18℃,东北风,微风
+101110102:20日08时,d01,多云,22℃,东北风,微风
+101110102:20日11时,d07,小雨,27℃,东北风,微风
+101110102:20日14时,d07,小雨,30℃,东北风,微风
+101110102:20日17时,d07,小雨,30℃,东北风,微风
+101110102:20日20时,n01,多云,24℃,东北风,微风
+101110102:20日23时,n01,多云,23℃,东北风,微风
+101110102:21日02时,n01,多云,21℃,东北风,微风
+101110102:21日05时,n02,阴,20℃,东北风,微风
+101110102:21日08时,d02,阴,22℃,东北风,微风
+101110102:21日11时,d03,阵雨,26℃,东北风,微风
+101110102:21日14时,d03,阵雨,26℃,东北风,微风
+101110102:21日17时,d03,阵雨,26℃,东北风,微风
+101110102:21日20时,n03,阵雨,23℃,东北风,微风
+101110102:21日23时,n08,中雨,21℃,东北风,微风
+101110102:22日02时,n08,中雨,20℃,东北风,微风
+101110102:22日05时,n08,中雨,20℃,东北风,微风
+test--1:[u'\nvar hour3data={"1d":["19\u65e520\u65f6,n00,\u6674,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],"23d":[["20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d02,\u9634,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]],"7d":[["19\u65e520\u65f6,n00,\u6674,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n01,\2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
 {'city_code': '101110113',
  'content': '19\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+2017-05-19 22:40:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather1d/101110103.shtml> (referer: None)
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '22\xe6\x97\xa508\xe6\x97\xb6,d08,\xe4\xb8\xad\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '22\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '22\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '22\xe6\x97\xa517\xe6\x97\xb6,d08,\xe4\xb8\xad\xe9\x9b\xa8,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '22\xe6\x97\xa520\xe6\x97\xb6,n07,\xe5\xb0\x8f\xe9\x9b\xa8,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '23\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,14\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
 {'city_code': '101110113',
  'content': '19\xe6\x97\xa523\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
 {'city_code': '101110113',
  'content': '20\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
 {'city_code': '101110113',
  'content': '20\xe6\x97\xa505\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
 {'city_code': '101110113',
  'content': '20\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '23\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,17\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '23\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '23\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '24\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '24\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '24\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '24\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
 {'city_code': '101110113',
  'content': '20\xe6\x97\xa511\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,29\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
 {'city_code': '101110113',
  'content': '20\xe6\x97\xa514\xe6\x97\xb6,d02,\xe9\x98\xb4,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '20\xe6\x97\xa517\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,31\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '20\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '20\xe6\x97\xa523\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '21\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '21\xe6\x97\xa505\xe6\x97\xb6,n02,\xe9\x98\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '21\xe6\x97\xa508\xe6\x97\xb6,d02,\xe9\x98\xb4,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '21\xe6\x97\xa511\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '21\xe6\x97\xa514\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '21\xe6\x97\xa517\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '21\xe6\x97\xa520\xe6\x97\xb6,n03,\xe9\x98\xb5\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '21\xe6\x97\xa523\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '22\xe6\x97\xa502\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '22\xe6\x97\xa505\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '22\xe6\x97\xa508\xe6\x97\xb6,d08,\xe4\xb8\xad\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '22\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '22\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '22\xe6\x97\xa517\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '22\xe6\x97\xa520\xe6\x97\xb6,n07,\xe5\xb0\x8f\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '23\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '23\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '23\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-65f6,n00,\u6674,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e502\u65f6,n00,\u6674,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["24\u65e508\u65f6,d01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e514\u65f6,d01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e520\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e502\u65f6,n01,\u591a\u4e91,17\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["25\u65e508\u65f6,d00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e514\u65f6,d01,\u591a\u4e91,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e520\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e502\u65f6,n00,\u6674,16\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["26\u65e508\u65f6,d00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e514\u65f6,d00,\u6674,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e520\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]]}\n']
+u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d02,\u9634,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["22\u65e508\u65f6,d08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e511\u65f6,d07,\u5c0f\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e514\u65f6,d07,\u5c0f\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e517\u65f6,d07,\u5c0f\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e520\u65f6,n07,\u5c0f\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e502\u65f6,n01,\u591a\u4e91,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["23\u65e508\u65f6,d01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e514\u65f6,d00,\u6674,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e520\u65f6,n00,\u6674,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e502\u65f6,n00,\u6674,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["24\u65e508\u65f6,d01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e514\u65f6,d01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e520\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e502\u65f6,n01,\u591a\u4e91,17\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["25\u65e508\u65f6,d00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e514\u65f6,d01,\u591a\u4e91,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e520\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e502\u65f6,n00,\u6674,16\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["26\u65e508\u65f6,d00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e514\u65f6,d00,\u6674,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e520\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]]}\n']
 101110113:19日20时,n00,晴,25℃,东北风,微风
+101110102:22日08时,d08,中雨,20℃,东北风,微风
+101110102:22日11时,d07,小雨,20℃,东北风,微风
+101110102:22日14时,d07,小雨,19℃,东北风,微风
+101110102:22日17时,d08,中雨,19℃,东北风,微风
+101110102:22日20时,n07,小雨,18℃,东北风,微风
+101110102:23日02时,n01,多云,14℃,东北风,微风
 101110113:19日23时,n01,多云,22℃,东北风,微风
 101110113:20日02时,n01,多云,21℃,东北风,微风
 101110113:20日05时,n01,多云,21℃,东北风,微风
 101110113:20日08时,d01,多云,23℃,东北风,微风
+101110102:23日08时,d01,多云,17℃,东北风,微风
+101110102:23日14时,d00,晴,24℃,东北风,微风
+101110102:23日20时,n00,晴,18℃,东北风,微风
+101110102:24日02时,n01,多云,15℃,东北风,微风
+101110102:24日08时,d01,多云,18℃,东北风,微风
+101110102:24日14时,d01,多云,24℃,东北风,微风
+101110102:24日20时,n01,多云,18℃,东北风,微风
 101110113:20日11时,d01,多云,29℃,东北风,微风
 101110113:20日14时,d02,阴,30℃,东北风,微风
-101110113:20日17时,d01,多云,31℃,东北风,微风
+102017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '20\xe6\x97\xa517\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,31\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '20\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '20\xe6\x97\xa523\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '21\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '25\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,14\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '25\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '25\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '25\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '26\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,16\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '21\xe6\x97\xa505\xe6\x97\xb6,n02,\xe9\x98\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '21\xe6\x97\xa508\xe6\x97\xb6,d02,\xe9\x98\xb4,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '21\xe6\x97\xa511\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '21\xe6\x97\xa514\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '21\xe6\x97\xa517\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '21\xe6\x97\xa520\xe6\x97\xb6,n03,\xe9\x98\xb5\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '21\xe6\x97\xa523\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '22\xe6\x97\xa502\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '26\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '26\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,29\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
+{'city_code': '101110102',
+ 'content': '26\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '22\xe6\x97\xa505\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '22\xe6\x97\xa508\xe6\x97\xb6,d08,\xe4\xb8\xad\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '22\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '22\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '22\xe6\x97\xa517\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '22\xe6\x97\xa520\xe6\x97\xb6,n07,\xe5\xb0\x8f\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '23\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '23\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '23\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '23\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '24\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '24\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '24\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '24\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '25\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,17\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '25\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '25\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '25\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '26\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,16\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '26\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '26\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,31\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
+{'city_code': '101110113',
+ 'content': '26\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+1110113:20日17时,d01,多云,31℃,东北风,微风
 101110113:20日20时,n01,多云,28℃,东北风,微风
 101110113:20日23时,n01,多云,25℃,东北风,微风
 101110113:21日02时,n01,多云,23℃,东北风,微风
+101110102:25日02时,n01,多云,14℃,东北风,微风
+101110102:25日08时,d00,晴,20℃,东北风,微风
+101110102:25日14时,d01,多云,30℃,东北风,微风
+101110102:25日20时,n00,晴,19℃,东北风,微风
+101110102:26日02时,n00,晴,16℃,东北风,微风
 101110113:21日05时,n02,阴,22℃,东北风,微风
 101110113:21日08时,d02,阴,24℃,东北风,微风
 101110113:21日11时,d03,阵雨,28℃,东北风,微风
@@ -135,6 +336,9 @@ test--1:[u'\nvar hour3data={"1d":["19\u65e520\u65f6,n00,\u6674,25\u2103,\u4e1c\u
 101110113:21日20时,n03,阵雨,26℃,东北风,微风
 101110113:21日23时,n08,中雨,23℃,东北风,微风
 101110113:22日02时,n08,中雨,22℃,东北风,微风
+101110102:26日08时,d00,晴,22℃,东北风,微风
+101110102:26日14时,d00,晴,29℃,东北风,微风
+101110102:26日20时,n00,晴,18℃,东北风,微风
 101110113:22日05时,n08,中雨,21℃,东北风,微风
 101110113:22日08时,d08,中雨,22℃,东北风,微风
 101110113:22日11时,d07,小雨,22℃,东北风,微风
@@ -144,36 +348,6 @@ test--1:[u'\nvar hour3data={"1d":["19\u65e520\u65f6,n00,\u6674,25\u2103,\u4e1c\u
 101110113:23日02时,n01,多云,15℃,东北风,微风
 101110113:23日08时,d01,多云,18℃,东北风,微风
 101110113:23日14时,d00,晴,26℃,东北风,微风
-test--1:[u'\nvar hour3data={"1d":["19\u65e520\u65f6,n00,\u6674,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d07,\u5c0f\u96e8,27\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],"23d":[["20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d07,\u5c0f\u96e8,27\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n02,\u9634,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '19\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '19\xe6\x97\xa523\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '23\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '24\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '24\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '24\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '24\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '25\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,17\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '25\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-u98ce,\u5fae\u98ce","21\u65e520\u65f6,n03,\u9635\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]],"7d":[["19\u65e520\u65f6,n00,\u6674,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d07,\u5c0f\u96e8,27\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d07,\u5c0f\u96e8,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n02,\u9634,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n03,\u9635\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["22\u65e508\u65f6,d08,\u4e2d\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e511\u65f6,d07,\u5c0f\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e514\u65f6,d07,\u5c0f\u96e8,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e517\u65f6,d08,\u4e2d\u96e8,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e520\u65f6,n07,\u5c0f\u96e8,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e502\u65f6,n01,\u591a\u4e91,14\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["23\u65e508\u65f6,d01,\u591a\u4e91,17\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e514\u65f6,d00,\u6674,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e520\u65f6,n00,\u6674,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e502\u65f6,n01,\u591a\u4e91,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["24\u65e508\u65f6,d01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e514\u65f6,d01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e520\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e502\u65f6,n01,\u591a\u4e91,14\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["25\u65e508\u65f6,d00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e514\u65f6,d01,\u591a\u4e91,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e520\u65f6,n00,\u6674,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e502\u65f6,n00,\u6674,16\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["26\u65e508\u65f6,d00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e514\u65f6,d00,\u6674,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e520\u65f6,n00,\u6674,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]]}\n']
-101110102:19日20时,n00,晴,23℃,东北风,微风
-101110102:19日23时,n00,晴,20℃,东北风,微风
 101110113:23日20时,n00,晴,19℃,东北风,微风
 101110113:24日02时,n00,晴,15℃,东北风,微风
 101110113:24日08时,d01,多云,19℃,东北风,微风
@@ -181,442 +355,62 @@ u98ce,\u5fae\u98ce","21\u65e520\u65f6,n03,\u9635\u96e8,23\u2103,\u4e1c\u5317\u98
 101110113:24日20时,n01,多云,18℃,东北风,微风
 101110113:25日02时,n01,多云,17℃,东北风,微风
 101110113:25日08时,d00,晴,20℃,东北风,微风
-test--1:[u'\nvar hour3data={"1d":["19\u65e520\u65f6,n00,\u6674,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","19\u65e523\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],"23d":[["20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e523\u65f6,n01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e502\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e505\u65f6,n02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["21\u65e508\u65f6,d02,\u9634,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e511\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e514\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e517\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e520\u65f6,n03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","22\u65e502\u65f6,n08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"]],"7d":[["19\u65e520\u65f6,n00,\u6674,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","19\u65e523\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e523\u65f6,n01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e502\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e505\u65f6,n02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["21\u65e508\u65f6,d02,\u9634,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e511\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e514\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e517\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e520\u65f6,n03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","22\u65e502\u65f6,n08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["22\u65e508\u65f6,d08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","22\u65e511\u65f6,d07,\u5c0f\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","22\u65e514\u65f6,d07,\u5c0f\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","22\u65e517\u65f6,d07,\u5c0f\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","22\u65e520\u65f6,n07,\u5c0f\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","23\u65e502\u65f6,n01,\u591a\u4e91,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["23\u65e508\u65f6,d01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,1","23\u65e514\u65f6,d00,\u6674,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,1","23\u65e520\u65f6,n00,\u6674,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","24\u652017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '19\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '19\xe6\x97\xa523\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '20\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '20\xe6\x97\xa505\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '20\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '20\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,27\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '20\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '20\xe6\x97\xa517\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '25\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '25\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '26\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,16\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '26\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '26\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,31\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110113.shtml>
-{'city_code': '101110113',
- 'content': '26\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '20\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '20\xe6\x97\xa505\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '20\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '20\xe6\x97\xa511\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,29\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '20\xe6\x97\xa514\xe6\x97\xb6,d02,\xe9\x98\xb4,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '20\xe6\x97\xa517\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,31\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '20\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '20\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '20\xe6\x97\xa523\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '21\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '21\xe6\x97\xa505\xe6\x97\xb6,n02,\xe9\x98\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '21\xe6\x97\xa508\xe6\x97\xb6,d02,\xe9\x98\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '21\xe6\x97\xa511\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '21\xe6\x97\xa514\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '20\xe6\x97\xa523\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '21\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '21\xe6\x97\xa505\xe6\x97\xb6,n02,\xe9\x98\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '21\xe6\x97\xa508\xe6\x97\xb6,d02,\xe9\x98\xb4,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '21\xe6\x97\xa517\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '21\xe6\x97\xa520\xe6\x97\xb6,n03,\xe9\x98\xb5\xe9\x9b\xa8,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '21\xe6\x97\xa523\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '22\xe6\x97\xa502\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '22\xe6\x97\xa505\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '22\xe6\x97\xa508\xe6\x97\xb6,d08,\xe4\xb8\xad\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '21\xe6\x97\xa511\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '21\xe6\x97\xa514\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '21\xe6\x97\xa517\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '21\xe6\x97\xa520\xe6\x97\xb6,n03,\xe9\x98\xb5\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '21\xe6\x97\xa523\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '22\xe6\x97\xa502\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '22\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '22\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '22\xe6\x97\xa517\xe6\x97\xb6,d08,\xe4\xb8\xad\xe9\x9b\xa8,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '22\xe6\x97\xa520\xe6\x97\xb6,n07,\xe5\xb0\x8f\xe9\x9b\xa8,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '22\xe6\x97\xa505\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '22\xe6\x97\xa508\xe6\x97\xb6,d08,\xe4\xb8\xad\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '22\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '22\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '22\xe6\x97\xa517\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '22\xe6\x97\xa520\xe6\x97\xb6,n07,\xe5\xb0\x8f\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '23\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,14\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '23\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,17\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '23\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '23\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '24\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-e502\u65f6,n00,\u6674,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["24\u65e508\u65f6,d01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,1","24\u65e514\u65f6,d01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,1","24\u65e520\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","25\u65e502\u65f6,n01,\u591a\u4e91,17\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["25\u65e508\u65f6,d00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","25\u65e514\u65f6,d01,\u591a\u4e91,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","25\u65e520\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","26\u65e502\u65f6,n00,\u6674,16\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["26\u65e508\u65f6,d00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","26\u65e514\u65f6,d00,\u6674,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2"]]}\n']
-101110101:19日20时,n00,晴,25℃,东北风,微风,0
-101110101:19日23时,n01,多云,22℃,东北风,微风,0
-101110102:20日02时,n01,多云,19℃,东北风,微风
-101110102:20日05时,n01,多云,18℃,东北风,微风
-101110102:20日08时,d01,多云,22℃,东北风,微风
-101110102:20日11时,d07,小雨,27℃,东北风,微风
-101110102:20日14时,d07,小雨,30℃,东北风,微风
-101110102:20日17时,d07,小雨,30℃,东北风,微风
 101110113:25日14时,d01,多云,30℃,东北风,微风
 101110113:25日20时,n00,晴,20℃,东北风,微风
 101110113:26日02时,n00,晴,16℃,东北风,微风
 101110113:26日08时,d00,晴,22℃,东北风,微风
 101110113:26日14时,d00,晴,31℃,东北风,微风
 101110113:26日20时,n00,晴,20℃,东北风,微风
-101110101:20日02时,n01,多云,21℃,东北风,微风,0
-101110101:20日05时,n01,多云,21℃,东北风,微风,0
-101110101:20日08时,d01,多云,23℃,东北风,微风,2
-101110101:20日11时,d01,多云,29℃,东北风,微风,2
-101110101:20日14时,d02,阴,30℃,东北风,微风,3
-101110101:20日17时,d01,多云,31℃,东北风,微风,2
-101110101:20日20时,n01,多云,28℃,东北风,微风,0
-101110102:20日20时,n01,多云,24℃,东北风,微风
-101110102:20日23时,n01,多云,23℃,东北风,微风
-101110102:21日02时,n01,多云,21℃,东北风,微风
-101110102:21日05时,n02,阴,20℃,东北风,微风
-101110102:21日08时,d02,阴,22℃,东北风,微风
-101110102:21日11时,d03,阵雨,26℃,东北风,微风
-101110102:21日14时,d03,阵雨,26℃,东北风,微风
-101110101:20日23时,n01,多云,25℃,东北风,微风,0
-101110101:21日02时,n01,多云,23℃,东北风,微风,0
-101110101:21日05时,n02,阴,22℃,东北风,微风,0
-101110101:21日08时,d02,阴,24℃,东北风,微风,3
-101110102:21日17时,d03,阵雨,26℃,东北风,微风
-101110102:21日20时,n03,阵雨,23℃,东北风,微风
-101110102:21日23时,n08,中雨,21℃,东北风,微风
-101110102:22日02时,n08,中雨,20℃,东北风,微风
-101110102:22日05时,n08,中雨,20℃,东北风,微风
-101110102:22日08时,d08,中雨,20℃,东北风,微风
-101110101:21日11时,d03,阵雨,28℃,东北风,微风,3
-101110101:21日14时,d03,阵雨,28℃,东北风,微风,3
-101110101:21日17时,d03,阵雨,28℃,东北风,微风,3
-101110101:21日20时,n03,阵雨,26℃,东北风,微风,0
-101110101:21日23时,n08,中雨,23℃,东北风,微风,0
-101110101:22日02时,n08,中雨,22℃,东北风,微风,0
-101110102:22日11时,d07,小雨,20℃,东北风,微风
-101110102:22日14时,d07,小雨,19℃,东北风,微风
-101110102:22日17时,d08,中雨,19℃,东北风,微风
-101110102:22日20时,n07,小雨,18℃,东北风,微风
-101110101:22日05时,n08,中雨,21℃,东北风,微风,0
-101110101:22日08时,d08,中雨,22℃,东北风,微风,3
-101110101:22日11时,d07,小雨,22℃,东北风,微风,3
-101110101:22日14时,d07,小雨,21℃,东北风,微风,3
-101110101:22日17时,d07,小雨,21℃,东北风,微风,3
-101110101:22日20时,n07,小雨,20℃,东北风,微风,0
-101110102:23日02时,n01,多云,14℃,东北风,微风
-101110102:23日08时,d01,多云,17℃,东北风,微风
-101110102:23日14时,d00,晴,24℃,东北风,微风
-101110102:23日20时,n00,晴,18℃,东北风,微风
-101110102:24日02时,n01,多云,15℃,东北风,微风
-12017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '24\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '24\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '24\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather1d/101110103.shtml> (referer: None)
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '23\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '23\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,1'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '23\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,1'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '23\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '24\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '24\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,1'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '25\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,14\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '25\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '25\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '25\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '26\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,16\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '24\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,1'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '24\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '25\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,17\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '25\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '25\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '25\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '26\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '26\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,29\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110102.shtml>
-{'city_code': '101110102',
- 'content': '26\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '26\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,16\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '26\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
-{'city_code': '101110101',
- 'content': '26\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,31\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
-01110102:24日08时,d01,多云,18℃,东北风,微风
-101110102:24日14时,d01,多云,24℃,东北风,微风
-101110102:24日20时,n01,多云,18℃,东北风,微风
-101110101:23日02时,n01,多云,15℃,东北风,微风,0
-101110101:23日08时,d01,多云,18℃,东北风,微风,1
-101110101:23日14时,d00,晴,26℃,东北风,微风,1
-101110101:23日20时,n00,晴,19℃,东北风,微风,0
-101110101:24日02时,n00,晴,15℃,东北风,微风,0
-101110101:24日08时,d01,多云,19℃,东北风,微风,1
-101110102:25日02时,n01,多云,14℃,东北风,微风
-101110102:25日08时,d00,晴,20℃,东北风,微风
-101110102:25日14时,d01,多云,30℃,东北风,微风
-101110102:25日20时,n00,晴,19℃,东北风,微风
-101110102:26日02时,n00,晴,16℃,东北风,微风
-101110101:24日14时,d01,多云,25℃,东北风,微风,1
-101110101:24日20时,n01,多云,18℃,东北风,微风,0
-101110101:25日02时,n01,多云,17℃,东北风,微风,0
-101110101:25日08时,d00,晴,20℃,东北风,微风,2
-101110101:25日14时,d01,多云,30℃,东北风,微风,2
-101110101:25日20时,n00,晴,20℃,东北风,微风,0
-101110102:26日08时,d00,晴,22℃,东北风,微风
-101110102:26日14时,d00,晴,29℃,东北风,微风
-101110102:26日20时,n00,晴,18℃,东北风,微风
-101110101:26日02时,n00,晴,16℃,东北风,微风,0
-101110101:26日08时,d00,晴,22℃,东北风,微风,2
-101110101:26日14时,d00,晴,31℃,东北风,微风,2
-test--1:[u'\nvar hour3data={"1d":["19\u65e520\u65f6,n00,\u6674,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d02,\u9634,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],"23d":[["20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d02,\u9634,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n07,\u5c0f\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]],"7d":[["19\u65e520\u65f6,n00,\u6674,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d02,\u9634,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,24\u2103,\u42017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+test--1:[u'\nvar hour3data={"1d":["19\u65e520\u65f6,n00,\u6674,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d02,\u9634,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],"23d":[["20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d02,\u9634,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n07,\u5c0f\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,21\u2103,\u42017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '19\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '19\xe6\x97\xa523\xe6\x97\xb6,n00,\xe6\x99\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.weather.com.cn/weather1d/101110101.shtml> (referer: None)
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '20\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '20\xe6\x97\xa505\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '20\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '20\xe6\x97\xa511\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '20\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,31\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '20\xe6\x97\xa517\xe6\x97\xb6,d02,\xe9\x98\xb4,31\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '20\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '20\xe6\x97\xa523\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '21\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '21\xe6\x97\xa505\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '21\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '21\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '21\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
 {'city_code': '101110103',
  'content': '21\xe6\x97\xa517\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '21\xe6\x97\xa520\xe6\x97\xb6,n07,\xe5\xb0\x8f\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '21\xe6\x97\xa523\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '22\xe6\x97\xa502\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '22\xe6\x97\xa505\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '22\xe6\x97\xa508\xe6\x97\xb6,d08,\xe4\xb8\xad\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '22\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '22\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '22\xe6\x97\xa517\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '22\xe6\x97\xa520\xe6\x97\xb6,n07,\xe5\xb0\x8f\xe9\x9b\xa8,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '23\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,14\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '23\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '23\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '23\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '24\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,16\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '24\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n07,\u5c0f\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["22\u65e508\u65f6,d08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e511\u65f6,d07,\u5c0f\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e514\u65f6,d07,\u5c0f\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e517\u65f6,d07,\u5c0f\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e520\u65f6,n07,\u5c0f\u96e8,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e502\u65f6,n01,\u591a\u4e91,14\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["23\u65e508\u65f6,d00,\u6674,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e514\u65f6,d00,\u6674,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e520\u65f6,n00,\u6674,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e502\u65f6,n00,\u6674,16\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["24\u65e508\u65f6,d01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e514\u65f6,d01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e520\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e502\u65f6,n01,\u591a\u4e91,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["25\u65e508\u65f6,d00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e514\u65f6,d01,\u591a\u4e91,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e520\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e502\u65f6,n00,\u6674,16\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["26\u65e508\u65f6,d00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e514\u65f6,d00,\u6674,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e520\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]]}\n']
+e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]],"7d":[["19\u65e520\u65f6,n00,\u6674,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","19\u65e523\u65f6,n00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e502\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e505\u65f6,n01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["20\u65e508\u65f6,d01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e511\u65f6,d01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e514\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e517\u65f6,d02,\u9634,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e520\u65f6,n01,\u591a\u4e91,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","20\u65e523\u65f6,n01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["21\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e511\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e514\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e517\u65f6,d07,\u5c0f\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e520\u65f6,n07,\u5c0f\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e502\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["22\u65e508\u65f6,d08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e511\u65f6,d07,\u5c0f\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e514\u65f6,d07,\u5c0f\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e517\u65f6,d07,\u5c0f\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","22\u65e520\u65f6,n07,\u5c0f\u96e8,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e502\u65f6,n01,\u591a\u4e91,14\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["23\u65e508\u65f6,d00,\u6674,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e514\u65f6,d00,\u6674,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","23\u65e520\u65f6,n00,\u6674,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e502\u65f6,n00,\u6674,16\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["24\u65e508\u65f6,d01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e514\u65f6,d01,\u591a\u4e91,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","24\u65e520\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e502\u65f6,n01,\u591a\u4e91,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["25\u65e508\u65f6,d00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e514\u65f6,d01,\u591a\u4e91,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","25\u65e520\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e502\u65f6,n00,\u6674,16\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"],["26\u65e508\u65f6,d00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e514\u65f6,d00,\u6674,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce","26\u65e520\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce"]]}\n']
 101110103:19日20时,n00,晴,24℃,东北风,微风
 101110103:19日23时,n00,晴,22℃,东北风,微风
 101110103:20日02时,n01,多云,19℃,东北风,微风
@@ -633,7 +427,82 @@ e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c
 101110103:21日11时,d07,小雨,28℃,东北风,微风
 101110103:21日14时,d07,小雨,28℃,东北风,微风
 101110103:21日17时,d07,小雨,28℃,东北风,微风
-101110103:21日20时,n07,小雨,26℃,东北风,微风
+1011101032017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '21\xe6\x97\xa520\xe6\x97\xb6,n07,\xe5\xb0\x8f\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '21\xe6\x97\xa523\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '22\xe6\x97\xa502\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '22\xe6\x97\xa505\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '22\xe6\x97\xa508\xe6\x97\xb6,d08,\xe4\xb8\xad\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '22\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '22\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '22\xe6\x97\xa517\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '22\xe6\x97\xa520\xe6\x97\xb6,n07,\xe5\xb0\x8f\xe9\x9b\xa8,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '23\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,14\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '23\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '23\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '23\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '24\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,16\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '24\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '24\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '24\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '25\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '25\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '25\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '25\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '26\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,16\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '26\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '26\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
+{'city_code': '101110103',
+ 'content': '26\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
+:21日20时,n07,小雨,26℃,东北风,微风
 101110103:21日23时,n08,中雨,23℃,东北风,微风
 101110103:22日02时,n08,中雨,21℃,东北风,微风
 101110103:22日05时,n08,中雨,21℃,东北风,微风
@@ -648,57 +517,7 @@ e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c
 101110103:23日20时,n00,晴,19℃,东北风,微风
 101110103:24日02时,n00,晴,16℃,东北风,微风
 101110103:24日08时,d01,多云,18℃,东北风,微风
-101110103:24日14时,d01,多云,24�2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '24\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '24\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '25\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '25\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '25\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '25\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '26\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,16\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '26\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '26\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110103.shtml>
-{'city_code': '101110103',
- 'content': '26\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e'}
-2017-05-19 21:10:02 [scrapy.core.engine] INFO: Closing spider (finished)
-2017-05-19 21:10:02 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
-{'downloader/request_bytes': 1190,
- 'downloader/request_count': 5,
- 'downloader/request_method_count/GET': 5,
- 'downloader/response_bytes': 92144,
- 'downloader/response_count': 5,
- 'downloader/response_status_count/200': 5,
- 'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2017, 5, 19, 13, 10, 2, 615293),
- 'item_scraped_count': 163,
- 'log_count/DEBUG': 169,
- 'log_count/INFO': 7,
- 'response_received_count': 5,
- 'scheduler/dequeued': 4,
- 'scheduler/dequeued/memory': 4,
- 'scheduler/enqueued': 4,
- 'scheduler/enqueued/memory': 4,
- 'start_time': datetime.datetime(2017, 5, 19, 13, 10, 1, 733267)}
-2017-05-19 21:10:02 [scrapy.core.engine] INFO: Spider closed (finished)
-�,东北风,微风
+101110103:24日14时,d01,多云,24℃,东北风,微风
 101110103:24日20时,n01,多云,18℃,东北风,微风
 101110103:25日02时,n01,多云,15℃,东北风,微风
 101110103:25日08时,d00,晴,20℃,东北风,微风
@@ -708,3 +527,184 @@ e1c\u5317\u98ce,\u5fae\u98ce","21\u65e502\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c
 101110103:26日08时,d00,晴,22℃,东北风,微风
 101110103:26日14时,d00,晴,30℃,东北风,微风
 101110103:26日20时,n00,晴,20℃,东北风,微风
+test--1:[u'\nvar hour3data={"1d":["19\u65e520\u65f6,n00,\u6674,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","19\u65e523\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],"23d":[["20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e523\u65f6,n01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e502\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e505\u65f6,n02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["21\u65e508\u65f6,d02,\u9634,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e511\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e514\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e517\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e520\u65f6,n03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","22\u65e502\u65f6,n08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"]],"7d":[["19\u65e520\u65f6,n00,\u6674,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","19\u65e523\u65f6,n01,\u591a\u4e91,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e502\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e505\u65f6,n01,\u591a\u4e91,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["20\u65e508\u65f6,d01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e511\u65f6,d01,\u591a\u4e91,29\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e514\u65f6,d02,\u9634,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","20\u65e517\u65f6,d01,\u591a\u4e91,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","20\u65e520\u65f6,n01,\u591a\u4e91,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","20\u65e523\u65f6,n01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u982017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '19\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '19\xe6\x97\xa523\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '20\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '20\xe6\x97\xa505\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '20\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '20\xe6\x97\xa511\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,29\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '20\xe6\x97\xa514\xe6\x97\xb6,d02,\xe9\x98\xb4,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '20\xe6\x97\xa517\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,31\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '20\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '20\xe6\x97\xa523\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '21\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '21\xe6\x97\xa505\xe6\x97\xb6,n02,\xe9\x98\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '21\xe6\x97\xa508\xe6\x97\xb6,d02,\xe9\x98\xb4,24\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '21\xe6\x97\xa511\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '21\xe6\x97\xa514\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '21\xe6\x97\xa517\xe6\x97\xb6,d03,\xe9\x98\xb5\xe9\x9b\xa8,28\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '21\xe6\x97\xa520\xe6\x97\xb6,n03,\xe9\x98\xb5\xe9\x9b\xa8,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '21\xe6\x97\xa523\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,23\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '22\xe6\x97\xa502\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '22\xe6\x97\xa505\xe6\x97\xb6,n08,\xe4\xb8\xad\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '22\xe6\x97\xa508\xe6\x97\xb6,d08,\xe4\xb8\xad\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '22\xe6\x97\xa511\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '22\xe6\x97\xa514\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '22\xe6\x97\xa517\xe6\x97\xb6,d07,\xe5\xb0\x8f\xe9\x9b\xa8,21\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,3'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '22\xe6\x97\xa520\xe6\x97\xb6,n07,\xe5\xb0\x8f\xe9\x9b\xa8,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '23\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '23\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,1'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '23\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,26\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,1'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '23\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '24\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,15\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '24\xe6\x97\xa508\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,19\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,1'}
+ce,\u5fae\u98ce,0","21\u65e502\u65f6,n01,\u591a\u4e91,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e505\u65f6,n02,\u9634,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["21\u65e508\u65f6,d02,\u9634,24\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e511\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e514\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e517\u65f6,d03,\u9635\u96e8,28\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","21\u65e520\u65f6,n03,\u9635\u96e8,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","21\u65e523\u65f6,n08,\u4e2d\u96e8,23\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","22\u65e502\u65f6,n08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","22\u65e505\u65f6,n08,\u4e2d\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["22\u65e508\u65f6,d08,\u4e2d\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","22\u65e511\u65f6,d07,\u5c0f\u96e8,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","22\u65e514\u65f6,d07,\u5c0f\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","22\u65e517\u65f6,d07,\u5c0f\u96e8,21\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,3","22\u65e520\u65f6,n07,\u5c0f\u96e8,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","23\u65e502\u65f6,n01,\u591a\u4e91,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["23\u65e508\u65f6,d01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,1","23\u65e514\u65f6,d00,\u6674,26\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,1","23\u65e520\u65f6,n00,\u6674,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","24\u65e502\u65f6,n00,\u6674,15\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["24\u65e508\u65f6,d01,\u591a\u4e91,19\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,1","24\u65e514\u65f6,d01,\u591a\u4e91,25\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,1","24\u65e520\u65f6,n01,\u591a\u4e91,18\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","25\u65e502\u65f6,n01,\u591a\u4e91,17\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["25\u65e508\u65f6,d00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","25\u65e514\u65f6,d01,\u591a\u4e91,30\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","25\u65e520\u65f6,n00,\u6674,20\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0","26\u65e502\u65f6,n00,\u6674,16\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,0"],["26\u65e508\u65f6,d00,\u6674,22\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2","26\u65e514\u65f6,d00,\u6674,31\u2103,\u4e1c\u5317\u98ce,\u5fae\u98ce,2"]]}\n']
+101110101:19日20时,n00,晴,25℃,东北风,微风,0
+101110101:19日23时,n01,多云,22℃,东北风,微风,0
+101110101:20日02时,n01,多云,21℃,东北风,微风,0
+101110101:20日05时,n01,多云,21℃,东北风,微风,0
+101110101:20日08时,d01,多云,23℃,东北风,微风,2
+101110101:20日11时,d01,多云,29℃,东北风,微风,2
+101110101:20日14时,d02,阴,30℃,东北风,微风,3
+101110101:20日17时,d01,多云,31℃,东北风,微风,2
+101110101:20日20时,n01,多云,28℃,东北风,微风,0
+101110101:20日23时,n01,多云,25℃,东北风,微风,0
+101110101:21日02时,n01,多云,23℃,东北风,微风,0
+101110101:21日05时,n02,阴,22℃,东北风,微风,0
+101110101:21日08时,d02,阴,24℃,东北风,微风,3
+101110101:21日11时,d03,阵雨,28℃,东北风,微风,3
+101110101:21日14时,d03,阵雨,28℃,东北风,微风,3
+101110101:21日17时,d03,阵雨,28℃,东北风,微风,3
+101110101:21日20时,n03,阵雨,26℃,东北风,微风,0
+101110101:21日23时,n08,中雨,23℃,东北风,微风,0
+101110101:22日02时,n08,中雨,22℃,东北风,微风,0
+101110101:22日05时,n08,中雨,21℃,东北风,微风,0
+101110101:22日08时,d08,中雨,22℃,东北风,微风,3
+101110101:22日11时,d07,小雨,22℃,东北风,微风,3
+101110101:22日14时,d07,小雨,21℃,东北风,微风,3
+101110101:22日17时,d07,小雨,21℃,东北风,微风,3
+101110101:22日20时,n07,小雨,20℃,东北风,微风,0
+101110101:23日02时,n01,多云,15℃,东北风,微风,0
+101110101:23日08时,d01,多云,18℃,东北风,微风,1
+101110101:23日14时,d00,晴,26℃,东北风,微风,1
+101110101:23日20时,n00,晴,19℃,东北风,微风,0
+101110101:24日02时,n00,晴,15℃,东北风,微风,0
+101110101:24日08时,d01,多云,19℃,东北风,微风,1
+102017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '24\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,25\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,1'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '24\xe6\x97\xa520\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,18\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '25\xe6\x97\xa502\xe6\x97\xb6,n01,\xe5\xa4\x9a\xe4\xba\x91,17\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '25\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '25\xe6\x97\xa514\xe6\x97\xb6,d01,\xe5\xa4\x9a\xe4\xba\x91,30\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '25\xe6\x97\xa520\xe6\x97\xb6,n00,\xe6\x99\xb4,20\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '26\xe6\x97\xa502\xe6\x97\xb6,n00,\xe6\x99\xb4,16\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,0'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '26\xe6\x97\xa508\xe6\x97\xb6,d00,\xe6\x99\xb4,22\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
+2017-05-19 22:40:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.weather.com.cn/weather1d/101110101.shtml>
+{'city_code': '101110101',
+ 'content': '26\xe6\x97\xa514\xe6\x97\xb6,d00,\xe6\x99\xb4,31\xe2\x84\x83,\xe4\xb8\x9c\xe5\x8c\x97\xe9\xa3\x8e,\xe5\xbe\xae\xe9\xa3\x8e,2'}
+2017-05-19 22:40:02 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-05-19 22:40:02 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1190,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 92191,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 5, 19, 14, 40, 2, 764440),
+ 'item_scraped_count': 163,
+ 'log_count/DEBUG': 169,
+ 'log_count/INFO': 7,
+ 'response_received_count': 5,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2017, 5, 19, 14, 40, 1, 731475)}
+2017-05-19 22:40:02 [scrapy.core.engine] INFO: Spider closed (finished)
+1110101:24日14时,d01,多云,25℃,东北风,微风,1
+101110101:24日20时,n01,多云,18℃,东北风,微风,0
+101110101:25日02时,n01,多云,17℃,东北风,微风,0
+101110101:25日08时,d00,晴,20℃,东北风,微风,2
+101110101:25日14时,d01,多云,30℃,东北风,微风,2
+101110101:25日20时,n00,晴,20℃,东北风,微风,0
+101110101:26日02时,n00,晴,16℃,东北风,微风,0
+101110101:26日08时,d00,晴,22℃,东北风,微风,2
+101110101:26日14时,d00,晴,31℃,东北风,微风,2

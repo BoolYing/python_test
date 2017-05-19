@@ -30,16 +30,17 @@ while 1:
     request    = conn.recv(1024)
     print 'request is: ',request
     print 'Connected by', addr
-    cur.execute('select * from user_info;')
+    
+    cur.execute('select username,city from user_info;')
     results = cur.fetchall()
     result = list(results)
-    reply = []
+    reply = 'ok\n'
     for r in result:
-        
-        
-        
-
-
+        reply += '['
+        reply += r[0]
+        reply += ','
+        reply += r[1]
+        reply += '];'
     
     conn.sendall(reply)
     conn.close()
