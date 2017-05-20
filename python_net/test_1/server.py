@@ -2,19 +2,101 @@
 # Server side
 import socket
 import MySQLdb
-
+import sys
 # Mysql
 dbuser = 'root'
 dbpass = '123456'
 dbname = 'bs_db'
 dbhost = '127.0.0.1'
 dbport = '3306'
-conn=MySQLdb.connect(user=dbuser, passwd=dbpass, db=dbname, host=dbhost, charset="utf8", use_unicode=True)
-cur=conn.cursor()
 
 # Address
 HOST = ""
 PORT = 8955
+
+
+def select_user_info():
+    connect = None
+    try:
+        connect=MySQLdb.connect(user=dbuser, passwd=dbpass, db=dbname, host=dbhost, charset="utf8", use_unicode=True)
+        cur=connect.cursor()
+        cur.execute('select username,city from user_info;')
+        results = cur.fetchall()
+        result = list(results)
+        reply = ''
+        for r in result:
+            reply += '['
+            reply += r[0]
+            reply += ','
+            reply += r[1]
+            reply += '];'
+
+        if connect:
+            cur.close()
+            connect.close()
+        return reply
+    except MySQLdb.Error, e:
+        print "Error %d: %s" % (e.args[0], e.args[1])
+        sys.exit()
+
+def select_user_login():
+    connect = None
+    try:
+        connect=MySQLdb.connect(user=dbuser, passwd=dbpass, db=dbname, host=dbhost, charset="utf8", use_unicode=True)
+        cur=connect.cursor()
+        cur.execute('select username,password from user_login;')
+        results = cur.fetchall()
+        result = list(results)
+        reply = ' '
+        for r in result:
+            reply += '['
+            reply += r[0]
+            reply += ','
+            reply += r[1]
+            reply += '];'
+        if connect:
+            cur.close()
+            connect.close()
+        return reply
+    except MySQLdb.Error, e:
+        print "Error %d: %s" % (e.args[0], e.args[1])
+        sys.exit()
+
+#cur.execute('select id,city_code,weatherDate1,weatherDate2,weatherWea,weatherTem1,weatherTem2,weatherWin,updateTime from weather7day;')
+
+def select_weather7day():
+    f = None
+    try:
+        f = open('/var/lib/mysql-files/weather7day.txt')
+        print('weather7day_full.txt is opened\n')
+        reply = f.read()
+        return reply
+    except Exception as err:
+        print("File operation failed:" + str(err))
+        return ' '
+    finally:
+        if f:
+            f.close()
+            print('weather7day_full.txt is closed\n')
+
+
+#cur.execute('select id,city_code,weatherDate,weatherWea,weatherTem,weatherWinf,weatherWinl,updateTime from weather7day_full;')
+def select_weather7day_full():
+    f = None
+    try:
+        f = open('/var/lib/mysql-files/weather7day_full.txt')
+        print('weather7day_full.txt is opened\n')
+        reply = f.read()
+        return reply
+    except Exception as err:
+        print("File operation failed:" + str(err))
+        return ' '
+    finally:
+        if f:
+            f.close()
+            print('weather7day_full.txt is closed\n')
+
+    pass
 
 
 # Configure socket
@@ -30,20 +112,17 @@ while 1:
     request    = conn.recv(1024)
     print 'request is: ',request
     print 'Connected by', addr
-    
-    cur.execute('select username,city from user_info;')
-    results = cur.fetchall()
-    result = list(results)
-    reply = 'ok\n'
-    for r in result:
-        reply += '['
-        reply += r[0]
-        reply += ','
-        reply += r[1]
-        reply += '];'
-    
+
+    if request == 'user_info':
+        reply = select_user_info()
+    elif request == 'user_login':
+        reply = select_user_login()
+    elif request == 'weather7day':
+        reply = select_weather7day()
+    elif request == 'weather7day_full':
+        reply = select_weather7day_full()
+    #reply = '----ok,here is all info you need----\n'
     conn.sendall(reply)
     conn.close()
-
 
 
