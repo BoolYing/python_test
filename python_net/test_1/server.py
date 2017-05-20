@@ -68,8 +68,9 @@ def select_weather7day():
     f = None
     try:
         f = open('/var/lib/mysql-files/weather7day.txt')
-        print('weather7day_full.txt is opened\n')
+        print('weather7day_full.txt is opened')
         reply = f.read()
+        print("file content:\n%s"%reply)
         return reply
     except Exception as err:
         print("File operation failed:" + str(err))
@@ -77,7 +78,7 @@ def select_weather7day():
     finally:
         if f:
             f.close()
-            print('weather7day_full.txt is closed\n')
+            print('weather7day_full.txt is closed')
 
 
 #cur.execute('select id,city_code,weatherDate,weatherWea,weatherTem,weatherWinf,weatherWinl,updateTime from weather7day_full;')
@@ -85,8 +86,9 @@ def select_weather7day_full():
     f = None
     try:
         f = open('/var/lib/mysql-files/weather7day_full.txt')
-        print('weather7day_full.txt is opened\n')
+        print('weather7day_full.txt is opened')
         reply = f.read()
+        print("file content:\n%s"%reply)
         return reply
     except Exception as err:
         print("File operation failed:" + str(err))
@@ -94,7 +96,7 @@ def select_weather7day_full():
     finally:
         if f:
             f.close()
-            print('weather7day_full.txt is closed\n')
+            print('weather7day_full.txt is closed')
 
     pass
 

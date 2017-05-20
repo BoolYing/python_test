@@ -35,9 +35,10 @@ s.connect((host, port))
 
 # send message
 s.send(request)
-# receive message
-reply   = s.recv(1024)
-print 'reply is:\n',reply
+# receive message]
+reply   = s.recv(10000000)
+print "reply  is:\n",reply
+print "reply length is :",len(reply)
 # close connection
 s.close()
 
