@@ -13,7 +13,6 @@ class MySQLStorePipeline(object):
         #清空表：
         self.cursor.execute("truncate table weather7day_full;")
         self.conn.commit() 
-         
     def process_item(self, item, spider):
         curTime =  datetime.datetime.now()
         try:
@@ -29,15 +28,15 @@ class MySQLStorePipeline(object):
                                 curTime,
                             )
             )
-     
             self.conn.commit()
-     
-     
         except MySQLdb.Error, e:
             print "Error %d: %s" % (e.args[0], e.args[1])
-
-        
         return item
+
+
+
+
+
 
 
 '''

@@ -15,7 +15,6 @@ SPIDER_MODULES = ['today_weather.spiders']
 NEWSPIDER_MODULE = 'today_weather.spiders'
 
 DEBUG = True
-
 if DEBUG:
     dbuser = 'root'
     dbpass = '123456'
@@ -24,9 +23,9 @@ if DEBUG:
     dbport = '3306'
 else:
     dbuser = 'root'
-    dbpass = '123456'
+    dbpass = '*****'
     dbname = 'bs_db'
-    dbhost = '192.168.1.101'
+    dbhost = '********'
     dbport = '3306'
 
 

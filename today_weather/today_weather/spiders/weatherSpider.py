@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-  
 import scrapy
 from ..items import TodayWeatherItem
 import re
@@ -27,7 +27,6 @@ def get_urls():
 class CatchWeatherSpider(scrapy.Spider):
     name = 'weather'
     allowed_domains = ['weather.com.cn']
-    #start_urls = [ "http://www.weather.com.cn/weather1d/101280101.shtml"]
     start_urls = get_urls()
 
     def parse(self, response):

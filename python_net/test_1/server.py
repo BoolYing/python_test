@@ -1,6 +1,6 @@
 # Written by Vamei
 # Server side
-import socket
+import socket   
 import MySQLdb
 import sys
 # Mysql
@@ -107,7 +107,7 @@ s.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
 s.bind((HOST, PORT))
 
 # passively wait, 3: maximum number of connections in the queue
-s.listen(3)
+s.listen(1024)
 # accept and establish connection
 while 1:
     conn, addr = s.accept()
