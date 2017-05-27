@@ -27,12 +27,14 @@ else:
     sys.exit()
 
 
-
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((host, port))
+s.send('one  is here now!')
+reply   = s.recv(1024)
+print reply
 
 # configure socket
 while True:
-    s       = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((host, port))
     inp = input('>>>')
     # send message
     s.send(request)
@@ -40,6 +42,7 @@ while True:
     reply   = s.recv(10000000)
     print "reply  is:\n",reply
     print "reply length is :",len(reply)
+    inp = input('>>>')
     # close connection
     s.close()
 

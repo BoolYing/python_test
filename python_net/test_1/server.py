@@ -3,6 +3,7 @@
 import socket   
 import MySQLdb
 import sys
+import select
 # Mysql
 dbuser = 'root'
 dbpass = '123456'
@@ -102,8 +103,51 @@ def select_weather7day_full():
 
 
 # Configure socket
-s      = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1) 
+s.bind((HOST, PORT))
+s.listen(1024)
+
+r_list = [s,]
+num = 0
+# accept and establish connection
+while True:
+    rl,wl,error = select.select(r_list, [], [])
+    num += 1
+    print('--------counts is %s'%num)
+    print("--------rl's length is %s"%len(rl))
+    for fd in rl:
+        if fd == s:
+            conn, addr = fd.accept()
+            r_list.append(conn)
+            request = conn.recv(1024)  
+            print 'Connected by', addr
+            print request
+            reply = "connect to server succeed!"
+            conn.sendall(reply)
+        else:
+            try:
+                request = conn.recv(1024)
+                print 'requests: ',request
+                if request == 'user_info':
+                    reply = select_user_info()
+                elif request == 'user_login':
+                    reply = select_user_login()
+                elif request == 'weather7day':
+                     reply = select_weather7day()
+                elif request == 'weather7day_full':
+                     reply = select_weather7day_full()
+                conn.sendall(reply)
+
+                #fd.sendall('second ...,,,,;;;')
+            except ConnectionAbortedError:
+                r_list.remove(fd)
+                #sys.exit()
+    conn.close()
+'''
+# Configure socket
+s      = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
 s.bind((HOST, PORT))
 
 # passively wait, 3: maximum number of connections in the queue
@@ -126,5 +170,4 @@ while 1:
     #reply = '----ok,here is all info you need----\n'
     conn.sendall(reply)
     conn.close()
-
-
+'''
