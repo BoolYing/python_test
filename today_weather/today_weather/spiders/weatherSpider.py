@@ -25,9 +25,9 @@ def get_urls():
          print "Mysql Error %d: %s" % (e.args[0], e.args[1])
 
 class CatchWeatherSpider(scrapy.Spider):
-    name = 'weather'
+    name = 'weather' #爬虫程序的名字
     allowed_domains = ['weather.com.cn']
-    start_urls = get_urls()
+    start_urls = get_urls() #获取初始url列表，将爬取这个列表
 
     def parse(self, response):
         sel=Selector(response)
