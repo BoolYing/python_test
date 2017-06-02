@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Written by Vamei
 # Server side
 import socket   
@@ -15,58 +16,70 @@ dbport = '3306'
 HOST = ""
 PORT = 8955
 
-
-def select_user_info(request):
+def select_query(query):
     connect = None
     try:
         connect=MySQLdb.connect(user=dbuser, passwd=dbpass, db=dbname, host=dbhost, charset="utf8", use_unicode=True)
         cur=connect.cursor()
-        cur.execute('select username,city from user_info;')
+        cur.execute(query)
         results = cur.fetchall()
-        result = list(results)
-        reply = ''
-        for r in result:
-            reply += '['
-            reply += r[0]
-            reply += ','
-            reply += r[1]
-            reply += '];'
-
         if connect:
             cur.close()
             connect.close()
-        return reply
+        return results
     except MySQLdb.Error, e:
         print "Error %d: %s" % (e.args[0], e.args[1])
         sys.exit()
 
-def select_user_login(self,request):
-    connect = None
+def select_user_info(username):
+    print username
+    query = 'select city  from user_info where username = "%s"' % username
+    print query
+    results = select_query(query)
+    result = list(results)
+    reply = ''
+    for r in result:
+        reply += r[0]
+        reply += ','
+    return reply
+
+def select_user_login(login_info):
     reply = "no"
-    try:
-        connect=MySQLdb.connect(user=dbuser, passwd=dbpass, db=dbname, host=dbhost, charset="utf8", use_unicode=True)
-        cur=connect.cursor()
-        username = request.split(',')[0]
-        passwoed = request.split(',')[1]
+    print login_info
+    username = login_info.split(',')[0]
+    password = login_info.split(',')[1]
+    query = 'select password from user_login where username="%s";'% username
+    print query
+    results = select_query(query)
+    if(results):
+        passwd = list( list(results)[0])[0]
+        if passwd == password:
+            reply = 'yes'
+    return reply
 
-        cur.execute('select password from user_login where username="%s";'% username)
-        passwd = cur.fetchone()
-        if(passwd != None):
-            passwd = list(passwd)[0]
-            if passwd == password:
-                reply = 'yes'
-        if connect:
-            cur.close()
-            connect.close()
-        return reply
-    except MySQLdb.Error, e:
-        print "Error %d: %s" % (e.args[0], e.args[1])
-        sys.exit()
 
 #cur.execute('select id,city_code,weatherDate1,weatherDate2,weatherWea,weatherTem1,weatherTem2,weatherWin,updateTime from weather7day;')
 
-def select_weather7day(self,request):
-    f = None
+def select_weather7day(username):
+    print username
+    query = 'select * from weather7day where city_code in (select city from user_info where username = "%s")'% username
+    print query
+    results = select_query(query)
+    result = list(results)
+    reply = ''
+    for r in result:
+        reply += r[0]+','
+        reply += r[1]+','
+        reply += r[2]+','
+        reply += r[3]+','
+        reply += r[4]+','
+        reply += r[5]+','
+        reply += r[6]+','
+        reply += r[7]+','
+        reply += r[8]+';'
+    return reply
+
+'''    f = None
     try:
         f = open('/var/lib/mysql-files/weather7day.txt')
         print('weather7day_full.txt is opened')
@@ -79,12 +92,29 @@ def select_weather7day(self,request):
     finally:
         if f:
             f.close()
-            print('weather7day_full.txt is closed')
+            print('weather7day_full.txt is closed')'''
 
 
 #cur.execute('select id,city_code,weatherDate,weatherWea,weatherTem,weatherWinf,weatherWinl,updateTime from weather7day_full;')
-def select_weather7day_full(self,request):
-    f = None
+def select_weather7day_full(username):
+    print username
+    query = 'select * from weather7day_full where city_code in (select city from user_info where username = "%s")'% username
+    print query
+    results = select_query(query)
+    result = list(results)
+    reply = ''
+    for r in result:
+        reply += r[0]+','
+        reply += r[1]+','
+        reply += r[2]+','
+        reply += r[3]+','
+        reply += r[4]+','
+        reply += r[5]+','
+        reply += r[6]+','
+        reply += r[7]+';'
+    return reply 
+
+'''    f = None
     try:
         f = open('/var/lib/mysql-files/weather7day_full.txt')
         print('weather7day_full.txt is opened')
@@ -99,7 +129,7 @@ def select_weather7day_full(self,request):
             f.close()
             print('weather7day_full.txt is closed')
 
-    pass
+    pass'''
 
 '''
 # Configure socket
@@ -156,19 +186,27 @@ s.listen(1024)
 # accept and establish connection
 while 1:
     conn, addr = s.accept()
-    request    = conn.recv(1024)
+    request    = conn.recv(1)
     print 'request is: ',request
     print 'Connected by', addr
-
-    if request == 'user_info':
-        reply = select_user_info(request)
-    elif request == 'user_login':
-        reply = select_user_login(request)
-    elif request == 'weather7day':
+    reply=' '
+    if request == '2':#用户关注城市代码列表
+        username = conn.recv(1024)
+        reply = select_user_info(username)
+    elif request == '1':#用户登录验证
+        login_info = conn.recv(1024)
+        reply = select_user_login(login_info)
+    elif request == '3':#未来七天大致天气
+        user_id = conn.recv(1024)
         reply = select_weather7day(request)
-    elif request == 'weather7day_full':
+    elif request == '4':#未来七天详细信息
+        user_id = conn.recv(1024)
         reply = select_weather7day_full(request)
-    
+    elif request == '5':
+        query = conn.recv(1024)
+        reply = select_query(query)
+    else:
+        print("客户端请求的参数错误，不在预期范围内。") 
     conn.sendall(reply)
     conn.close()
 
