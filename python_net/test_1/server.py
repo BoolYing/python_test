@@ -4,7 +4,10 @@
 import socket   
 import MySQLdb
 import sys
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
 import select
+
 # Mysql
 dbuser = 'root'
 dbpass = '123456'
@@ -62,74 +65,68 @@ def select_user_login(login_info):
 
 def select_weather7day(username):
     print username
-    query = 'select * from weather7day where city_code in (select city from user_info where username = "%s")'% username
+    query = 'select * from weather7day where city_code in (select city from user_info where username = "%s") order by cast(city_code as unsigned),id asc'% username
     print query
     results = select_query(query)
     result = list(results)
     reply = ''
     for r in result:
-        reply += r[0]+','
-        reply += r[1]+','
-        reply += r[2]+','
-        reply += r[3]+','
-        reply += r[4]+','
-        reply += r[5]+','
-        reply += r[6]+','
-        reply += r[7]+','
-        reply += r[8]+';'
-    return reply
-
-'''    f = None
-    try:
-        f = open('/var/lib/mysql-files/weather7day.txt')
-        print('weather7day_full.txt is opened')
-        reply = f.read()
-        print("file content:\n%s"%reply)
-        return reply
-    except Exception as err:
-        print("File operation failed:" + str(err))
-        return ' '
-    finally:
-        if f:
-            f.close()
-            print('weather7day_full.txt is closed')'''
+        #reply += r[0]
+        #reply += ','
+        reply += r[1]
+        reply += ','
+        reply += r[2]
+        reply += ','
+        reply += r[3]
+        reply += ','
+        reply += r[4]
+        reply += ','
+        reply += r[5]
+        reply += ','
+        reply += r[6]
+        reply += ','
+        reply += r[7]
+        reply += ';'
+        #reply += r[8]
+        #reply += ';'
+    return reply 
 
 
 #cur.execute('select id,city_code,weatherDate,weatherWea,weatherTem,weatherWinf,weatherWinl,updateTime from weather7day_full;')
 def select_weather7day_full(username):
     print username
-    query = 'select * from weather7day_full where city_code in (select city from user_info where username = "%s")'% username
+    query = 'select * from weather7day_full where city_code in (select city from user_info where username = "%s") order by cast(city_code as unsigned),id asc'% username
     print query
     results = select_query(query)
     result = list(results)
     reply = ''
-    for r in result:
-        reply += r[0]+','
-        reply += r[1]+','
-        reply += r[2]+','
-        reply += r[3]+','
-        reply += r[4]+','
-        reply += r[5]+','
-        reply += r[6]+','
-        reply += r[7]+';'
+    for r in list(result):
+        #reply += `r[0]` + ','
+        reply += r[1] + ','
+        reply += r[2] + ','
+        reply += r[3] + ','
+        reply += r[4] + ','
+        reply += r[5] + ','
+        reply += r[6] + ';'
+        #reply += `r[7]` + ';'
+    print reply
     return reply 
 
-'''    f = None
-    try:
-        f = open('/var/lib/mysql-files/weather7day_full.txt')
-        print('weather7day_full.txt is opened')
-        reply = f.read()
-        print("file content:\n%s"%reply)
-        return reply
-    except Exception as err:
-        print("File operation failed:" + str(err))
-        return ' '
-    finally:
-        if f:
-            f.close()
-            print('weather7day_full.txt is closed')
+def select_city_code():
+    query = 'select * from city_code'
+    results = select_query(query)
+    result = list(results)
+    reply = ''
+    for r in list(result):
+        reply += r[0] + ','
+        reply += r[1] + ','
+        reply += r[2] + ','
+        reply += r[3] + ';'
+    print reply
+    return reply
 
-    pass'''
+    
+
 
 '''
 # Configure socket
@@ -197,16 +194,15 @@ while 1:
         login_info = conn.recv(1024)
         reply = select_user_login(login_info)
     elif request == '3':#未来七天大致天气
-        user_id = conn.recv(1024)
-        reply = select_weather7day(request)
+        username = conn.recv(1024)
+        reply = select_weather7day(username)
     elif request == '4':#未来七天详细信息
-        user_id = conn.recv(1024)
-        reply = select_weather7day_full(request)
-    elif request == '5':
-        query = conn.recv(1024)
-        reply = select_query(query)
+        username = conn.recv(1024)
+        reply = select_weather7day_full(username)
+    elif request == '5':#请求城市代码
+        reply = select_city_code()
     else:
         print("客户端请求的参数错误，不在预期范围内。") 
-    conn.sendall(reply)
+    conn.sendall(reply.encode('utf-8'))
     conn.close()
 
